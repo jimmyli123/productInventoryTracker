@@ -1,0 +1,25 @@
+public class Main {
+    public static void main(String[] args) {
+        Product iPad3 = new Product(399.99, 1, 111);
+    }
+}
+
+class Product {
+    private double priceOfProduct;
+    private int quantityOfProduct;
+    private int iDOfProduct;
+
+    public Product(double mPrice, int mQty, int mId) {
+        priceOfProduct = mPrice;
+        quantityOfProduct = mQty;
+        iDOfProduct = mId;
+    }
+
+    public void DisplayProductInfo() {
+        System.out.println("Product name: ");
+    }
+}
+
+class InventoryOfProducts {
+    private static
+}
