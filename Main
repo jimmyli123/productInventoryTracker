@@ -1,6 +1,16 @@
+// @author: Jiabin Li
+// Create an application which manages an inventory of products.
+// Create a product class which has a price, id, and quantity on hand.
+// Then create an inventory class which keeps track of various products
+// and can sum up the inventory value.
+
+
 public class Main {
     public static void main(String[] args) {
         Product iPad3 = new Product(399.99, 1, 111);
+        iPad3.DisplayProductInfo();
+        iPad3.AddOneUnit();
+        iPad3.DisplayProductInfo();
     }
 }
 
@@ -14,12 +24,22 @@ class Product {
         quantityOfProduct = mQty;
         iDOfProduct = mId;
     }
+    public void AddOneUnit() {
+        quantityOfProduct++;
+    }
+    public void AddNumberOfUnits(int QuantityToAdd) {
+        quantityOfProduct += QuantityToAdd;
+    }
 
     public void DisplayProductInfo() {
-        System.out.println("Product name: ");
+        System.out.println("Price: " + priceOfProduct);
+        System.out.println("Quantity on hand: " + quantityOfProduct);
+        System.out.println("Total Value of inventory: " + (quantityOfProduct * priceOfProduct));
+        System.out.println("Product ID: " + iDOfProduct);
+
     }
 }
 
 class InventoryOfProducts {
-    private static
+
 }
