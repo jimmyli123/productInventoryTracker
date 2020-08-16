@@ -1,16 +1,19 @@
 // @author: Jiabin Li
-// Create an application which manages an inventory of products.
-// Create a product class which has a price, id, and quantity on hand.
-// Then create an inventory class which keeps track of various products
-// and can sum up the inventory value.
+// Date started: August 12, 2020
+// Description of program: Product Inventory Project – Create an application
+// which manages an inventory of products. Create a product class which has a
+// price, id, and quantity on hand. Then create an inventory class which keeps
+// track of various products and can sum up the inventory value.
 
 
 public class Main {
     public static void main(String[] args) {
         Product iPad3 = new Product(399.99, 1, 111);
-        iPad3.DisplayProductInfo();
         iPad3.AddOneUnit();
-        iPad3.DisplayProductInfo();
+        InventoryOfProduct iPadInventory = new InventoryOfProduct(iPad3);
+
+        Product hamburger = new Product(1.99,5,222);
+        InventoryOfProduct hamburgerInventory = new InventoryOfProduct(hamburger);
     }
 }
 
@@ -31,15 +34,31 @@ class Product {
         quantityOfProduct += QuantityToAdd;
     }
 
-    public void DisplayProductInfo() {
-        System.out.println("Price: " + priceOfProduct);
-        System.out.println("Quantity on hand: " + quantityOfProduct);
-        System.out.println("Total Value of inventory: " + (quantityOfProduct * priceOfProduct));
-        System.out.println("Product ID: " + iDOfProduct);
-
+    public double getPrice() {
+        return priceOfProduct;
     }
+
+    public int getQuantityOfProduct() {
+        return quantityOfProduct;
+    }
+
+    public int getiDOfProduct() {
+        return iDOfProduct;
+    }
+
 }
 
-class InventoryOfProducts {
+class InventoryOfProduct {
+
+    InventoryOfProduct(Product x) {
+        DisplayProductInfo(x);
+    }
+    public void DisplayProductInfo(Product y) {
+        System.out.println("Price: " + y.getPrice());
+        System.out.println("Quantity on hand: " + y.getQuantityOfProduct());
+        System.out.println("Total Value of inventory: " + (y.getQuantityOfProduct() * y.getPrice()));
+        System.out.println("Product ID: " + y.getiDOfProduct());
+
+    }
 
 }
